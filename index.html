@@ -42,11 +42,14 @@
 
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
-  <hgroup>
-    <h2>Intro &amp; Description</h2>
-  </hgroup>
   <article data-timings="">
-    <p>The above app is about linear optimisation (like what solver does in MS Excel).</p>
+    <style type = "text/css">
+code.r{font-size: 12px;}
+</style>
+
+<h2>Intro &amp; Description</h2>
+
+<p>The above app is about linear optimisation (like what solver does in MS Excel).</p>
 
 <p>It is about a fictional company that makes 2 products: Razor and Navajo. It is assumed that the company is so profitable that it can sell all its products.</p>
 
@@ -94,15 +97,31 @@
 
 <slide class="class" id="4" style="background:;">
   <hgroup>
-    <h2>Where the idea came from</h2>
+    <h2>Model Behind the App</h2>
   </hgroup>
   <article data-timings="">
-    <p>For full disclosure please note that the linear model used to build this App is a model I picked up from another
-Coursera Course (Operations Analytics). However, the Operations Analytics course is entirely taught in Excel and
-doesn&#39;t involve any R coding. Therefore, all the interfaces in the Shiny App, Slidify and all the R codes are my
-own work.</p>
+    <p>The model used in the app is built using the lpSove package (similar to solver in Excel).</p>
 
-<p>Link to the Operations Analytics Course: <a href="https://www.coursera.org/learn/wharton-operations-analytics/home/week/2">https://www.coursera.org/learn/wharton-operations-analytics/home/week/2</a></p>
+<pre><code class="r">require(lpSolve)
+obj &lt;- c(135, 170) #Coefficients of objective funtive to maximise
+con &lt;- matrix(c(4,5,1.5,2,1,0.8), nrow = 3, byrow = TRUE) # Matrix coefficients of the constraints      
+rel = c(&quot;&lt;=&quot;, &quot;&lt;=&quot;, &quot;&lt;=&quot;) # Contrainst operator
+rhs = c(5610, 2200, 1200) # Contraints treshold
+my.lp = lp(&quot;max&quot;, obj, con, rel, rhs)
+my.lp$solution # Gets the solution, i.e. the number of units to produce
+</code></pre>
+
+<pre><code>## [1] 440 770
+</code></pre>
+
+<pre><code class="r">my.lp$objval # Get the objective value, i.e. the maximum profits 
+</code></pre>
+
+<pre><code>## [1] 190300
+</code></pre>
+
+<p><strong>Where the idea came from</strong>
+The linear model used to build this App is a model I picked up from the Coursera Course (Operations Analytics). However, the Operations Analytics course is entirely taught in Excel and doesn&#39;t involve any R coding. <a href="https://www.coursera.org/learn/wharton-operations-analytics/home/week/2">https://www.coursera.org/learn/wharton-operations-analytics/home/week/2</a></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -114,7 +133,7 @@ own work.</p>
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Intro &amp; Description'>
+        data-slide=1 title='NA'>
          1
       </a>
     </li>
@@ -132,7 +151,7 @@ own work.</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Where the idea came from'>
+        data-slide=4 title='Model Behind the App'>
          4
       </a>
     </li>

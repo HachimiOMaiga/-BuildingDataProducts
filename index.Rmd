@@ -10,6 +10,9 @@ widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
+<style type = "text/css">
+code.r{font-size: 12px;}
+</style>
 
 ## Intro & Description
 The above app is about linear optimisation (like what solver does in MS Excel).
@@ -42,13 +45,22 @@ In the picture above, R and N represent the two product models, i.e. Razor and N
 
 --- .class #4
 
-## Where the idea came from
+## Model Behind the App
 
-For full disclosure please note that the linear model used to build this App is a model I picked up from another
-Coursera Course (Operations Analytics). However, the Operations Analytics course is entirely taught in Excel and
-doesn't involve any R coding. Therefore, all the interfaces in the Shiny App, Slidify and all the R codes are my
-own work.
+The model used in the app is built using the lpSove package (similar to solver in Excel).
 
-Link to the Operations Analytics Course: https://www.coursera.org/learn/wharton-operations-analytics/home/week/2
+```{r message=FALSE}
+require(lpSolve)
+obj <- c(135, 170) #Coefficients of objective funtive to maximise
+con <- matrix(c(4,5,1.5,2,1,0.8), nrow = 3, byrow = TRUE) # Matrix coefficients of the constraints      
+rel = c("<=", "<=", "<=") # Contrainst operator
+rhs = c(5610, 2200, 1200) # Contraints treshold
+my.lp = lp("max", obj, con, rel, rhs)
+my.lp$solution # Gets the solution, i.e. the number of units to produce
+my.lp$objval # Get the objective value, i.e. the maximum profits 
+```
+
+**Where the idea came from**
+The linear model used to build this App is a model I picked up from the Coursera Course (Operations Analytics). However, the Operations Analytics course is entirely taught in Excel and doesn't involve any R coding. https://www.coursera.org/learn/wharton-operations-analytics/home/week/2
 
 
