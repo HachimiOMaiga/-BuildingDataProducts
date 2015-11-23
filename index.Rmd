@@ -28,7 +28,7 @@ Note: that no negative values should be entered.
 --- .class #2
 
 ## Shiny App: Production Plan Optimisation
-![width](assets\\img\\AppScreenshot.PNG)
+![width](assets/img/AppScreenshot.PNG)
 
 --- .class #3
 
@@ -36,7 +36,7 @@ Note: that no negative values should be entered.
 
 In order to run the application, there are some linear constrainst built in that need to be taken into consideration. The constrains can be summarised in the picture below.
 
-![width](assets\\img\\Constraints.PNG)
+![width](assets/img/Constraints.PNG)
 
 In the picture above, R and N represent the two product models, i.e. Razor and Navajo respectively.
 
