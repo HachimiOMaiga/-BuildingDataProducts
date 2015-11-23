@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Production Plan Optimisation</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Production Plan Optimisation">
+  <meta name="author" content="HOM">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Production Plan Optimisation</h1>
+    <h2>Linear Optimisation</h2>
+    <p>HOM<br/>Learner</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Intro &amp; Description</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The above app is about linear optimisation (like what solver does in MS Excel).</p>
+
+<p>It is about a fictional company that makes 2 products: Razor and Navajo. It is assumed that the company is so profitable that it can sell all its products.</p>
+
+<p>The production process of each product includes 3 main steps:</p>
+
+<ul>
+<li>Manufacturing Frame.</li>
+<li>Wheels &amp; Deck Assembly. </li>
+<li>QA &amp; Packaging.<br></li>
+</ul>
+
+<p>The capacity (in hours) at each production step is assumed to be: 5610, 2200, 1200 respectively. So the main goal are to determine How many units of each model should be produced in order to maximise profit. Hence the app will compute the number of units of each model and the maximum profits available. Therefore, the user just needs to input the values and the app will compute the above objective.</p>
+
+<p>Note: that no negative values should be entered.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="2" style="background:;">
+  <hgroup>
+    <h2>Shiny App: Production Plan Optimisation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets%5Cimg%5CAppScreenshot.PNG" alt="width"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="3" style="background:;">
+  <hgroup>
+    <h2>Linear Constraints</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>In order to run the application, there are some linear constrainst built in that need to be taken into consideration. The constrains can be summarised in the picture below.</p>
+
+<p><img src="assets%5Cimg%5CConstraints.PNG" alt="width"></p>
+
+<p>In the picture above, R and N represent the two product models, i.e. Razor and Navajo respectively.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="4" style="background:;">
+  <hgroup>
+    <h2>Where the idea came from</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>For full disclosure please note that the linear model used to build this App is a model I picked up from another
+Coursera Course (Operations Analytics). However, the Operations Analytics course is entirely taught in Excel and
+doesn&#39;t involve any R coding. Therefore, all the interfaces in the Shiny App, Slidify and all the R codes are my
+own work.</p>
+
+<p>Link to the Operations Analytics Course: <a href="https://www.coursera.org/learn/wharton-operations-analytics/home/week/2">https://www.coursera.org/learn/wharton-operations-analytics/home/week/2</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Intro &amp; Description'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Shiny App: Production Plan Optimisation'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Linear Constraints'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Where the idea came from'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
